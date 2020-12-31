@@ -4,7 +4,8 @@ pipeline {
     stage('Buzz Build') {
       steps {
         sh 'chmod +x ./jenkins/build.sh'
-        sh './jenkins/build.sh'
+        sh './jenkins/build.sh > target/result.txt'
+        archiveArtifacts(artifacts: 'target/*.txt', fingerprint: true)
       }
     }
 
