@@ -11,6 +11,8 @@ pipeline {
       steps {
         echo 'Buzz, Bees, Buzz'
         echo 'Bees Buzzing!'
+        sh 'sleep 5'
+        sh 'echo \'Success!\''
       }
     }
 
