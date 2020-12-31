@@ -1,18 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('Buzz Buzz') {
+    stage('Buzz Build') {
       steps {
-        echo 'Bees Buzz!'
+        sh './jenkins/build.sh'
       }
     }
 
-    stage('Bees Bees') {
+    stage('Buzz Test') {
       steps {
-        echo 'Buzz, Bees, Buzz'
-        echo 'Bees Buzzing!'
-        sh 'sleep 5'
-        sh 'echo \'Success!\''
+        sh './jenkins/test-all.sh'
       }
     }
 
